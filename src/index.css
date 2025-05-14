@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 50% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 262 83% 65%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 260 50% 45%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 262 83% 96%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 262 83% 65%;
+
+    --radius: 0.8rem;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 262 83% 65%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 260 50% 45%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 33% 18%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  /* Add premium-looking scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-taskease-purple/50 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-taskease-purple;
+  }
+}
+
+@layer utilities {
+  /* ... keep existing code (task-card, mobile-container, page-container utility classes) */
+  
+  .glass-effect {
+    @apply bg-white/70 backdrop-blur-sm border border-white/30 shadow-lg;
+  }
+  
+  .premium-card {
+    @apply bg-gradient-to-br from-white to-taskease-light-purple/30 rounded-xl p-4 shadow-md border border-taskease-purple/10;
+  }
+  
+  .premium-button {
+    @apply bg-gradient-to-r from-taskease-purple to-taskease-deep-purple text-white font-medium rounded-lg px-4 py-2 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5;
+  }
+  
+  .premium-input {
+    @apply bg-white border border-gray-200 rounded-lg px-4 py-2 focus:ring-2 focus:ring-taskease-purple/50 focus:border-transparent transition-all duration-200 outline-none;
+  }
+  
+  .task-card {
+    @apply premium-card flex items-center gap-3 hover:shadow-lg transition-all duration-300;
+  }
+  
+  .focus-task {
+    @apply bg-gradient-to-br from-taskease-light-purple to-taskease-light-purple/50 border border-taskease-purple/30 rounded-xl p-4 mb-3 shadow-md;
+  }
+  
+  /* ... keep existing code (mobile-container, page-container utility classes) */
+  
+  .bottom-nav {
+    @apply fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white/80 backdrop-blur-md border-t border-border h-16 flex items-center justify-around px-6 shadow-lg;
+  }
+  
+  /* ... keep existing code (nav-item, nav-icon, priority classes) */
+  
+  .mood-icon {
+    @apply h-10 w-10 rounded-full flex items-center justify-center transition-all cursor-pointer shadow-sm;
+  }
+  
+  .mood-icon.active {
+    @apply bg-gradient-to-br from-taskease-purple to-taskease-deep-purple text-white shadow-md;
+  }
+  
+  .mood-icon.inactive {
+    @apply bg-muted text-muted-foreground hover:bg-taskease-light-purple hover:shadow-md;
+  }
+
+  .mobile-container {
+    @apply max-w-md mx-auto min-h-screen bg-background shadow-lg relative;
+    width: 100vw;
+    min-width: 0;
+    border-radius: 1.5rem;
+    overflow: hidden;
+  }
+}

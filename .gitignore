@@ -1,0 +1,47 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies (exclude node_modules, dist, android, and any build folders)
+node_modules
+dist
+android
+*.local
+
+# Editor directories and files (exclude .DS_Store, .vscode, .idea, etc.)
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment variables (exclude .env, .env.* except .env.example)
+.env
+.env.*
+!.env.example
+
+# Build output (exclude build/, coverage/, etc.)
+build/
+coverage/
+
+# Cache (exclude .cache, .temp, .eslintcache, .stylelintcache, etc.)
+.cache/
+.temp/
+.eslintcache
+.stylelintcache
+
+# Testing (exclude /coverage, /.nyc_output, etc.)
+/coverage
+/.nyc_output
+
+# Misc (exclude Thumbs.db, etc.)
+Thumbs.db
