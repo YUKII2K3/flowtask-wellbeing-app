@@ -50,7 +50,7 @@ A modern web application for tracking and improving personal wellbeing through t
    npm run dev
    ```
 
-4. Open [http://localhost:8080](http://localhost:8080) in your browser.
+4. Open [[http://localhost:8080](http://localhost:8080)](https://flowtask-wellbeing-app.vercel.app/) in your browser.
 
 ## Development
 
